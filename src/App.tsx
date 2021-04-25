@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import logo from "./logo.svg";
+import logo from "./logo.svg";
 
 import "./App.css";
 import { Ejemplo } from "./Ejemplo";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={"../public/logo.svg"} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" />
         <Ejemplo name="Esteban" />
       </header>
     </div>
