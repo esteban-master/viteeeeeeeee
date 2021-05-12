@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-gray-50;
+  }
+  body {
+    @apply max-w-6xl mx-auto;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+
+  input {
+    @apply w-full border-gray-400 border focus:ring-purple-500 px-3 py-2 focus:outline-none focus:ring-2 rounded-lg shadow-sm;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .card {
+  }
+
+  .migrid {
+    @apply max-w-6xl;
+    display: grid;
+    grid-template-areas:
+      "nombre"
+      "foto"
+      "detalles";
+  }
+
+  .detalles {
+    grid-area: detalles;
+  }
+
+  .foto {
+    grid-area: foto;
+  }
+
+  .nombre {
+    grid-area: nombre;
+  }
+}
+
+.estrella_ripley {
+  fill: #ffb71b;
+}
+
+@media (min-width: 640px) {
+  .migrid {
+    grid-template-areas:
+      "nombre"
+      "foto"
+      "detalles";
+  }
+}
+@media (min-width: 768px) {
+  .migrid {
+    grid-template-areas:
+      "foto foto foto nombre"
+      "foto foto foto detalles"
+      "foto foto foto detalles"
+      "foto foto foto detalles"
+      "foto foto foto detalles";
+  }
+}
+@media (min-width: 1024px) {
+  .migrid {
+    grid-template-areas:
+      "foto foto nombre nombre nombre"
+      "foto foto detalles detalles detalles"
+      "foto foto detalles detalles detalles"
+      "foto foto detalles detalles detalles"
+      "foto foto detalles detalles detalles";
+  }
 }
